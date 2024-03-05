@@ -10,19 +10,13 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       option_name: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(50),
+        allowNull: false
       },
       option_value: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(50),
+        allowNull: true
       },
-      createdAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-      },
-      updatedAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-      }
     });
   },
   async down(queryInterface, Sequelize) {

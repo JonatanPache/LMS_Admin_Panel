@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   DaySetting.init({
     total_days: DataTypes.INTEGER,
-    status: DataTypes.ENUM
+    status: DataTypes.ENUM('1','0')
   }, {
     sequelize,
     modelName: 'DaySetting',

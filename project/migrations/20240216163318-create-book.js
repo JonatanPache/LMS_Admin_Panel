@@ -10,33 +10,48 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       name: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(100),
+        allowNull: false
       },
       categoryId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references:{
+          model:{
+            tableName: "Categories"
+          },
+          key: "id"
+        },
+        allowNull: false
       },
       description: {
-        type: Sequelize.TEXT
+        type: Sequelize.TEXT,
+        allowNull: true
       },
       amount: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER(11),
+        allowNull: false
       },
       cover_image: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(220),
+        allowNull: false
       },
       author: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(100),
+        allowNull: true
       },
       status: {
-        type: Sequelize.ENUM
+        type: Sequelize.ENUM('1','0'),
+        defaultValue: '1'
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.literal("CURRENT_TIMESTAMP")
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.literal("CURRENT_TIMESTAMP")
       }
     });
   },

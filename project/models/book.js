@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
     amount: DataTypes.INTEGER,
     cover_image: DataTypes.STRING,
     author: DataTypes.STRING,
-    status: DataTypes.ENUM
+    status: DataTypes.ENUM('1','0')
   }, {
     sequelize,
     modelName: 'Book',

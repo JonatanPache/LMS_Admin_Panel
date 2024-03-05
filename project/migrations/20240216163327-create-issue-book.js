@@ -10,13 +10,34 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       categoryId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references:{
+          model:{
+            tableName: "Categories"
+          },
+          key: "id"
+        },
+        allowNull: false
       },
       bookId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references:{
+          model:{
+            tableName: "Books"
+          },
+          key: "id"
+        },
+        allowNull: false
       },
       userId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references:{
+          model:{
+            tableName: "Users"
+          },
+          key: "id"
+        },
+        allowNull: false
       },
       days_issued: {
         type: Sequelize.INTEGER
