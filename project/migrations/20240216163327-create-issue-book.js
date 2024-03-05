@@ -11,8 +11,8 @@ module.exports = {
       },
       categoryId: {
         type: Sequelize.INTEGER,
-        references:{
-          model:{
+        references: {
+          model: {
             tableName: "Categories"
           },
           key: "id"
@@ -21,8 +21,8 @@ module.exports = {
       },
       bookId: {
         type: Sequelize.INTEGER,
-        references:{
-          model:{
+        references: {
+          model: {
             tableName: "Books"
           },
           key: "id"
@@ -31,8 +31,8 @@ module.exports = {
       },
       userId: {
         type: Sequelize.INTEGER,
-        references:{
-          model:{
+        references: {
+          model: {
             tableName: "Users"
           },
           key: "id"
@@ -40,27 +40,34 @@ module.exports = {
         allowNull: false
       },
       days_issued: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER(11),
+        allowNull: false
       },
       issued_date: {
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.literal("CURRENT_TIMESTAMP")
       },
       is_returned: {
-        type: Sequelize.ENUM
+        type: Sequelize.ENUM('1', '0'),
+        defaultValue: '0'
       },
       returned_date: {
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        allowNull: true
       },
       status: {
-        type: Sequelize.ENUM
+        type: Sequelize.ENUM('1', '0'),
+        defaultValue: '1'
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.literal("CURRENT_TIMESTAMP")
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.literal("CURRENT_TIMESTAMP")
       }
     });
   },
