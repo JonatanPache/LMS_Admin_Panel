@@ -6,7 +6,7 @@ router.get("/admin/issue-a-book", function(req, res, next) {
   res.render("admin/issue-a-book");
 });
 
-router.get("/admin/issue-history", function(req, res, next) {
+router.get("/admin/list-issue-book", function(req, res, next) {
   res.render("admin/issue-history");
 });
 
