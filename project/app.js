@@ -11,6 +11,7 @@ var categoryRouter = require('./routes/category');
 var bookRouter = require('./routes/book');
 var userRouter = require('./routes/user');
 var issueBookRouter = require('./routes/issuebook');
+var returnBookRouter = require('./routes/returnbook');
 
 // var categoryRouter = require('./routes/category');
 
@@ -37,6 +38,7 @@ app.use('/', categoryRouter);
 app.use('/', bookRouter);
 app.use('/', userRouter);
 app.use('/', issueBookRouter);
+app.use('/', returnBookRouter);
 
 
 // catch 404 and forward to error handler
