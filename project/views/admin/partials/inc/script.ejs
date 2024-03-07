@@ -32,3 +32,21 @@
 <script src="dist/js/demo.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="dist/js/pages/dashboard.js"></script>
+
+<!-- DataTables -->
+<script src="plugins/datatables/jquery.dataTables.js"></script>
+<script src="plugins/datatables-bs4/jquery.dataTables.bootstrap4.js"></script>
+
+<script>
+  $(function() {
+
+    if($("$tbl-list-category").length > 0){
+      $("$tbl-list-category").DataTable();
+    }
+
+    if($("$tbl-list-book").length > 0){
+      $("$tbl-list-book").DataTable();
+    }
+
+  })
+</script>

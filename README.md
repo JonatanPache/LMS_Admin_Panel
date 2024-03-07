@@ -17,3 +17,8 @@ Create Database
 
 Then fix some tables, run the migrations with the command, but first go to config file and set up all credentials for 'development' and then run:
 `npx sequelize db:migrate`
+
+
+
+## Fedora, Debian
+`sudo fuser -k -n tcp 300`

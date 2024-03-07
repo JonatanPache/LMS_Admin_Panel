@@ -8,6 +8,10 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var adminRouter = require('./routes/admin');
 var categoryRouter = require('./routes/category');
+var bookRouter = require('./routes/book');
+var userRouter = require('./routes/user');
+
+// var categoryRouter = require('./routes/category');
 
 var app = express();
 
@@ -25,10 +29,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use("/admin",express.static(path.join(__dirname, 'public')));
 app.use("/admin/:any",express.static(path.join(__dirname, 'public')));
 
-// app.use('/', indexRouter);
-// app.use('/users', usersRouter);
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
 app.use('/', adminRouter);
 app.use('/', categoryRouter);
+app.use('/', bookRouter);
+app.use('/', userRouter);
 
 
 // catch 404 and forward to error handler

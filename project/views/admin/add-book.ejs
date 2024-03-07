@@ -1,0 +1,132 @@
+<%- include("partials/header") %>
+
+<!-- Content Header (Page header) -->
+<div class="content-header">
+  <div class="container-fluid">
+    <div class="row mb-2">
+      <div class="col-sm-6">
+        <h1 class="m-0">Add Book</h1>
+      </div>
+      <!-- /.col -->
+      <div class="col-sm-6">
+        <ol class="breadcrumb float-sm-right">
+          <li class="breadcrumb-item"><a href="#">Home</a></li>
+          <li class="breadcrumb-item active">Add Book</li>
+        </ol>
+      </div>
+      <!-- /.col -->
+    </div>
+    <!-- /.row -->
+  </div>
+  <!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+
+<!-- Main content -->
+<section class="content">
+  <div class="container-fluid">
+    <!-- Small boxes (Stat box) -->
+    <div class="row">
+      <!-- right column -->
+      <div class="col-md-12">
+        <!-- general form elements disabled -->
+        <div class="card card-dark">
+          <div class="card-header">
+            <h3 class="card-title">Add Book</h3>
+          </div>
+          <!-- /.card-header -->
+          <div class="card-body">
+            <form>
+              <!-- Input name and status -->
+              <div class="row">
+
+                <!-- text input -->
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label>Name</label>
+                    <input required type="text" class="form-control" placeholder="Enter name ..." name="name" />
+                  </div>
+                </div>
+
+                <!-- select category -->
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label>Select Category</label>
+                    <select class="form-control" name="dd_category">
+                      <option value="">Choose Category</option>
+                    </select>
+                  </div>
+                </div>
+
+
+              </div>
+
+              <!-- Description and amount -->
+              <div class="row">
+
+                <!-- text input -->
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label>Description</label>
+                    <textarea required type="text" class="form-control" placeholder="Description..." name="description"></textarea>
+                  </div>
+                </div>
+
+                <!-- amount -->
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label>Amount</label>
+                    <input required type="number" min="1" class="form-control" placeholder="Enter amount" name="amount">
+                  </div>
+                </div>
+
+
+              </div>
+
+              <div class="row">
+
+                <!-- file upload -->
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label>Cover Image</label>
+                    <input required type="file" class="form-control" name="cover_image"></input>
+                  </div>
+                </div>
+
+                <!-- select category -->
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label>Author</label>
+                    <input required type="text" min="1" class="form-control" placeholder="Enter Author" name="author">
+                  </div>
+                </div>
+
+
+              </div>
+
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Select Status</label>
+                  <select class="form-control" name="status">
+                    <option value="1">Active</option>
+                    <option value="0">Inactive</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- button submit -->
+              <button class="btn btn-dark" type="submit">Submit</button>
+            </form>
+          </div>
+          <!-- /.card-body -->
+        </div>
+      </div>
+      <!--/.col (right) -->
+    </div>
+    <!-- /.row -->
+  </div>
+  <!-- /.container-fluid -->
+</section>
+<!-- /.content -->
+
+<%- include("partials/footer")%>
