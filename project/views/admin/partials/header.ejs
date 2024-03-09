@@ -7,7 +7,7 @@
   <title>AdminLTE 3 | Dashboard</title>
 
   <%- include("inc/style") %>
-  
+
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -18,4 +18,16 @@
     <%- include("inc/sidebar") %>
 
     <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper"> 
+    <div class="content-wrapper">
+
+      <% if(messages.success) { %>
+        <div class="alert alert-success">
+          <%= messages.success  %>
+        </div>
+        <% } %>
+  
+        <% if(messages.error) { %>
+        <div class="alert alert-danger">
+          <%= messages.error  %>
+        </div>
+        <% } %>

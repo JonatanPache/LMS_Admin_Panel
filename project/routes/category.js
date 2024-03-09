@@ -16,7 +16,15 @@ router.route("/admin/add-category").get(function(req, res, next){
     name: req.body.name,
     status: req.body.status,
   }).then( (category) => {
-    res.redirect("/admin/add-category");
+
+    if(category){
+      req.flash("success", "Category created successfully")
+      res.redirect("/admin/add-category");
+    } else {
+      req.flash("error", "Failed to create category")
+      res.redirect("/admin/add-category");
+    }
+
   }); 
 
 

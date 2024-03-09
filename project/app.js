@@ -3,6 +3,9 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var flash = require('express-flash');
+var session = require('express-session');
+
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -13,8 +16,6 @@ var userRouter = require('./routes/user');
 var issueBookRouter = require('./routes/issuebook');
 var returnBookRouter = require('./routes/returnbook');
 var settingsRouter = require('./routes/settings');
-
-// var categoryRouter = require('./routes/category');
 
 var app = express();
 
@@ -27,6 +28,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(session({
+  name: "my_session",
+  secret: "my_secret",
+  resave: false,
+  saveUninitialized: true
+}));
+app.use(flash());
 
 // adding assets for admin routes
 app.use("/admin",express.static(path.join(__dirname, 'public')));
