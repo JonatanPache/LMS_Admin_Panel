@@ -29,7 +29,7 @@
           </div>
 
           <!-- /.card-header -->
-          
+
           <div class="card-body">
             <table id="tbl-list-category" class="table table-bordered table-hover">
               <thead>
@@ -40,7 +40,27 @@
                   <th>Action</th>
                 </tr>
               </thead>
-              <tbody></tbody>
+              <tbody>
+
+                <% categories.forEach( function(data){ %>
+                <tr>
+                  <td> <%= data.id %></td>
+                  <td> <%= data.name %></td>
+                  <td>
+                    <% if(data.status == '1') { %>
+                    <button class="btn btn-success">Active</button>
+                    <% } else { %>
+                    <button class="btn btn-danger">Inactive</button>
+                    <% } %>
+                  </td>
+                  <td>
+                    <a href="/admin/edit-category/<%= data.id %>" class="btn btn-primary"><i class="fa fa-edit"></i></a>
+                    <a class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                  </td>
+                </tr>
+                <% }) %>
+
+              </tbody>
               <tfoot>
                 <tr>
                   <th>#ID</th>

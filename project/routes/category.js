@@ -1,10 +1,9 @@
 var express = require('express');
 var Sequelize = require('sequelize');
 var categoryModel = require("../models").Category;
-
-
 var router = express.Router();
 var Op = Sequelize.Op;
+
 
 router.route("/admin/add-category").get(function(req, res, next){
   
@@ -45,9 +44,29 @@ router.route("/admin/add-category").get(function(req, res, next){
 
 });
 
+router.route("/admin/list-category").get( async function(req, res, next){
+  
+  var all_categories = await categoryModel.findAll();
 
-router.get("/admin/list-category", function(req, res, next) {
-  res.render("admin/list-category");
+  res.render("admin/list-category", {
+    categories: all_categories
+  });
+
+});
+
+
+router.get("/admin/edit-category/:categoryId", function(req, res, next) {
+  categoryModel.findOne({
+    where: {
+      id: {
+        [Op.eq] : req.params.categoryId
+      }
+    }
+  }).then( (data) => {
+    res.render("admin/edit-category",{
+      category: data
+    });
+  });
 });
 
 module.exports = router;
