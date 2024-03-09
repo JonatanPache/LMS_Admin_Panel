@@ -1,5 +1,11 @@
 <%- include("partials/header") %>
 
+<style>
+  #frm-add-category label.error{
+    color: red;
+  }
+</style>
+
 <!-- Content Header (Page header) -->
 <div class="content-header">
   <div class="container-fluid">
@@ -36,7 +42,7 @@
           </div>
           <!-- /.card-header -->
           <div class="card-body">
-            <form>
+            <form id="frm-add-category" name="frm-add-category" method="post">
               <!-- Input name and status -->
               <div class="row">
                 <div class="col-sm-6">
