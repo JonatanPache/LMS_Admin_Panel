@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var fileUpload = require("express-fileupload");
 var flash = require('express-flash');
 var session = require('express-session');
 
@@ -35,6 +36,10 @@ app.use(session({
   saveUninitialized: true
 }));
 app.use(flash());
+
+app.use(fileUpload({
+  createParentPath: true
+}));
 
 // adding assets for admin routes
 app.use("/admin",express.static(path.join(__dirname, 'public')));
